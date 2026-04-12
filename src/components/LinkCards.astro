@@ -1,0 +1,24 @@
+---
+import type { LinkCard } from "../types/content";
+import { withBase } from "../utils/paths";
+
+interface Props {
+  cards: LinkCard[];
+}
+
+const { cards } = Astro.props;
+---
+
+<div class="link-grid">
+  {cards.map((card) => (
+    <a
+      class="link-card"
+      href={withBase(card.href)}
+      target={card.external ? "_blank" : undefined}
+      rel={card.external ? "noreferrer" : undefined}
+    >
+      <strong>{card.label}</strong>
+      <p>{card.description}</p>
+    </a>
+  ))}
+</div>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" role="img" aria-labelledby="title desc">
+  <title id="title">Channel bundle placeholder</title>
+  <desc id="desc">A decorative placeholder graphic for a future QR code or channel import image.</desc>
+  <rect width="960" height="560" fill="#fffaf3"/>
+  <rect x="40" y="40" width="880" height="480" rx="28" fill="#f2ece2" stroke="#d7d0c3"/>
+  <rect x="90" y="90" width="220" height="220" rx="18" fill="#0d6b5c" opacity="0.14"/>
+  <rect x="110" y="110" width="180" height="180" rx="12" fill="#0d6b5c" opacity="0.24"/>
+  <path d="M160 160h80v80h-80z" fill="#0d6b5c"/>
+  <path d="M390 125h400" stroke="#0d6b5c" stroke-width="18" stroke-linecap="round"/>
+  <path d="M390 185h290" stroke="#5d685f" stroke-width="14" stroke-linecap="round"/>
+  <path d="M390 245h340" stroke="#5d685f" stroke-width="14" stroke-linecap="round"/>
+  <path d="M90 370h780" stroke="#d7d0c3" stroke-width="4"/>
+  <path d="M90 430h520" stroke="#0d6b5c" stroke-width="16" stroke-linecap="round"/>
+  <path d="M90 470h420" stroke="#5d685f" stroke-width="12" stroke-linecap="round"/>
+</svg>

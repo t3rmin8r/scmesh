@@ -3,6 +3,9 @@
 
 ### dotenv ###
 .env
+.astro
+dist
+node_modules
 
 ### macOS ###
 # General

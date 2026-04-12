@@ -1,0 +1,85 @@
+---
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import { site } from "../data/site";
+import { withBase } from "../utils/paths";
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+const pageTitle = `${title} | ${site.name}`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" href={withBase("/favicon.svg")} />
+    <script is:inline>
+      (() => {
+        const storageKey = "scmesh-theme-mode";
+        const modes = new Set(["light", "dark", "system"]);
+        const media = window.matchMedia("(prefers-color-scheme: dark)");
+
+        const resolveTheme = (mode) => {
+          if (mode === "light" || mode === "dark") {
+            return mode;
+          }
+
+          return media.matches ? "dark" : "light";
+        };
+
+        const getStoredMode = () => {
+          const stored = window.localStorage.getItem(storageKey);
+          return stored && modes.has(stored) ? stored : "system";
+        };
+
+        const applyTheme = (mode) => {
+          const resolved = resolveTheme(mode);
+          document.documentElement.dataset.themeMode = mode;
+          document.documentElement.dataset.theme = resolved;
+          document.documentElement.style.colorScheme = resolved;
+        };
+
+        const setThemeMode = (mode) => {
+          if (!modes.has(mode)) {
+            return;
+          }
+
+          window.localStorage.setItem(storageKey, mode);
+          applyTheme(mode);
+          window.dispatchEvent(new CustomEvent("theme-mode-change", { detail: { mode } }));
+        };
+
+        window.__getThemeMode = getStoredMode;
+        window.__setThemeMode = setThemeMode;
+
+        applyTheme(getStoredMode());
+
+        media.addEventListener("change", () => {
+          if (getStoredMode() === "system") {
+            applyTheme("system");
+            window.dispatchEvent(new CustomEvent("theme-mode-change", { detail: { mode: "system" } }));
+          }
+        });
+      })();
+    </script>
+  </head>
+  <body>
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<style is:global>
+  @import "../styles/global.css";
+</style>

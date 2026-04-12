@@ -1,0 +1,45 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+import LinkCards from "../components/LinkCards.astro";
+import ProseSection from "../components/ProseSection.astro";
+import { homeCards, homeHeroLinks, homeHighlights, homeIntro, homeQuickLinks } from "../data/home";
+import { site } from "../data/site";
+---
+
+<BaseLayout title="Home" description={site.description}>
+  <Hero
+    eyebrow="Static site template"
+    title={`${site.shortName} community docs`}
+    body={homeIntro}
+    links={homeHeroLinks}
+  />
+
+  <ProseSection title="What this site is for" paragraphs={[site.tagline]}>
+    <ul class="highlight-list">
+      {homeHighlights.map((item) => (
+        <li>{item}</li>
+      ))}
+    </ul>
+  </ProseSection>
+
+  <section class="home-grid">
+    <ProseSection
+      title="Explore the documentation"
+      paragraphs={[
+        "Each page is focused on a single operational topic so maintainers can update guidance without editing one oversized landing page."
+      ]}
+    >
+      <LinkCards cards={homeCards} />
+    </ProseSection>
+
+    <ProseSection
+      title="Replace placeholders before launch"
+      paragraphs={[
+        "This starter includes intentionally neutral URLs, hostnames, and assets. Review them in the data files before publishing anything operational."
+      ]}
+    >
+      <LinkCards cards={homeQuickLinks} />
+    </ProseSection>
+  </section>
+</BaseLayout>

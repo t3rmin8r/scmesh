@@ -1,0 +1,25 @@
+---
+import BulletGroups from "./BulletGroups.astro";
+import Callout from "./Callout.astro";
+import ConfigList from "./ConfigList.astro";
+import LinkCards from "./LinkCards.astro";
+import MediaBlock from "./MediaBlock.astro";
+import ProseSection from "./ProseSection.astro";
+import type { PageContent as PageContentType } from "../types/content";
+
+interface Props {
+  content: PageContentType;
+}
+
+const { content } = Astro.props;
+---
+
+{content.sections.map((section) => (
+  <ProseSection title={section.title} paragraphs={section.paragraphs}>
+    {section.callout && <Callout callout={section.callout} />}
+    {section.configItems && <ConfigList items={section.configItems} />}
+    {section.bullets && <BulletGroups groups={section.bullets} />}
+    {section.links && <LinkCards cards={section.links} />}
+    {section.media && <MediaBlock media={section.media} />}
+  </ProseSection>
+))}

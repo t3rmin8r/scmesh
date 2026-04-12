@@ -1,0 +1,15 @@
+---
+import type { MediaAsset } from "../types/content";
+import { withBase } from "../utils/paths";
+
+interface Props {
+  media: MediaAsset;
+}
+
+const { media } = Astro.props;
+---
+
+<figure class="media-block">
+  <img src={withBase(media.src)} alt={media.alt} loading="lazy" />
+  <figcaption>{media.caption}</figcaption>
+</figure>

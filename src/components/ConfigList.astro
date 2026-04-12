@@ -1,0 +1,21 @@
+---
+import type { ConfigItem } from "../types/content";
+
+interface Props {
+  items: ConfigItem[];
+}
+
+const { items } = Astro.props;
+---
+
+<dl class="config-list">
+  {items.map((item) => (
+    <div class="config-row">
+      <dt>{item.label}</dt>
+      <dd>
+        <strong>{item.value}</strong>
+        {item.detail && <span>{item.detail}</span>}
+      </dd>
+    </div>
+  ))}
+</dl>

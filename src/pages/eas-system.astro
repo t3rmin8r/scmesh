@@ -1,0 +1,18 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+import PageContent from "../components/PageContent.astro";
+import PageIntro from "../components/PageIntro.astro";
+import easSystemPage from "../data/pages/easSystem";
+---
+
+<BaseLayout title={easSystemPage.title} description={easSystemPage.description}>
+  <Hero
+    eyebrow={easSystemPage.heroEyebrow}
+    title={easSystemPage.title}
+    body={easSystemPage.heroBody}
+    links={easSystemPage.heroLinks}
+  />
+  <PageIntro intro={easSystemPage.intro} />
+  <PageContent content={easSystemPage} />
+</BaseLayout>

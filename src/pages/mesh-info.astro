@@ -1,0 +1,18 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+import PageContent from "../components/PageContent.astro";
+import PageIntro from "../components/PageIntro.astro";
+import meshInfoPage from "../data/pages/meshInfo";
+---
+
+<BaseLayout title={meshInfoPage.title} description={meshInfoPage.description}>
+  <Hero
+    eyebrow={meshInfoPage.heroEyebrow}
+    title={meshInfoPage.title}
+    body={meshInfoPage.heroBody}
+    links={meshInfoPage.heroLinks}
+  />
+  <PageIntro intro={meshInfoPage.intro} />
+  <PageContent content={meshInfoPage} />
+</BaseLayout>

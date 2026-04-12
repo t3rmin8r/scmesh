@@ -1,0 +1,25 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ChannelsTable from "../components/ChannelsTable.astro";
+import Hero from "../components/Hero.astro";
+import PageContent from "../components/PageContent.astro";
+import PageIntro from "../components/PageIntro.astro";
+import channelsPage, { channelRows } from "../data/pages/channels";
+---
+
+<BaseLayout title={channelsPage.title} description={channelsPage.description}>
+  <Hero
+    eyebrow={channelsPage.heroEyebrow}
+    title={channelsPage.title}
+    body={channelsPage.heroBody}
+    links={channelsPage.heroLinks}
+  />
+  <PageIntro intro={channelsPage.intro} />
+  <section class="content-section">
+    <div class="section-heading">
+      <h2>Channel lineup</h2>
+    </div>
+    <ChannelsTable rows={channelRows} />
+  </section>
+  <PageContent content={channelsPage} />
+</BaseLayout>

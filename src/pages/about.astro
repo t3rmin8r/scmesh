@@ -1,0 +1,13 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+import PageContent from "../components/PageContent.astro";
+import PageIntro from "../components/PageIntro.astro";
+import aboutPage from "../data/pages/about";
+---
+
+<BaseLayout title={aboutPage.title} description={aboutPage.description}>
+  <Hero eyebrow={aboutPage.heroEyebrow} title={aboutPage.title} body={aboutPage.heroBody} links={aboutPage.heroLinks} />
+  <PageIntro intro={aboutPage.intro} />
+  <PageContent content={aboutPage} />
+</BaseLayout>
