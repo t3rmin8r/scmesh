@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" role="img" aria-labelledby="title desc">
+  <title id="title">Coverage map placeholder</title>
+  <desc id="desc">A decorative placeholder graphic for a future coverage map.</desc>
+  <rect width="960" height="560" fill="#fffaf3"/>
+  <rect x="40" y="40" width="880" height="480" rx="28" fill="#edf3ef" stroke="#d7d0c3"/>
+  <circle cx="230" cy="260" r="120" fill="#d2ece4"/>
+  <circle cx="230" cy="260" r="68" fill="#0d6b5c" opacity="0.68"/>
+  <circle cx="490" cy="220" r="155" fill="#f6dfcb"/>
+  <circle cx="490" cy="220" r="90" fill="#9b4d16" opacity="0.58"/>
+  <circle cx="700" cy="320" r="120" fill="#d7d1f1"/>
+  <circle cx="700" cy="320" r="72" fill="#5d4cb3" opacity="0.52"/>
+  <path d="M170 380 410 310 655 360" fill="none" stroke="#5d685f" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="170" cy="380" r="13" fill="#1c2220"/>
+  <circle cx="410" cy="310" r="13" fill="#1c2220"/>
+  <circle cx="655" cy="360" r="13" fill="#1c2220"/>
+</svg>

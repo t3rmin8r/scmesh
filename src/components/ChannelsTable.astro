@@ -1,0 +1,30 @@
+---
+import type { ChannelRow } from "../types/content";
+
+interface Props {
+  rows: ChannelRow[];
+}
+
+const { rows } = Astro.props;
+---
+
+<div class="table-wrap">
+  <table class="channels-table">
+    <thead>
+      <tr>
+        <th>Channel</th>
+        <th>Role</th>
+        <th>Purpose</th>
+      </tr>
+    </thead>
+    <tbody>
+      {rows.map((row) => (
+        <tr>
+          <td>{row.name}</td>
+          <td>{row.role}</td>
+          <td>{row.purpose}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>

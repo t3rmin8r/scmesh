@@ -3,6 +3,10 @@
 
 ### dotenv ###
 .env
+.astro
+dist
+node_modules
+.vscode/
 
 ### macOS ###
 # General

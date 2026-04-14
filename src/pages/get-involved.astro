@@ -1,0 +1,18 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+import PageContent from "../components/PageContent.astro";
+import PageIntro from "../components/PageIntro.astro";
+import getInvolvedPage from "../data/pages/getInvolved";
+---
+
+<BaseLayout title={getInvolvedPage.title} description={getInvolvedPage.description}>
+  <Hero
+    eyebrow={getInvolvedPage.heroEyebrow}
+    title={getInvolvedPage.title}
+    body={getInvolvedPage.heroBody}
+    links={getInvolvedPage.heroLinks}
+  />
+  <PageIntro intro={getInvolvedPage.intro} />
+  <PageContent content={getInvolvedPage} />
+</BaseLayout>

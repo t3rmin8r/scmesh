@@ -1,0 +1,11 @@
+---
+interface Props {
+  intro: string;
+}
+
+const { intro } = Astro.props;
+---
+
+<section class="shell page-intro">
+  <p>{intro}</p>
+</section>

@@ -1,0 +1,36 @@
+---
+import type { LinkCard } from "../types/content";
+import { withBase } from "../utils/paths";
+
+interface Props {
+  eyebrow: string;
+  title: string;
+  body: string;
+  links?: LinkCard[];
+}
+
+const { eyebrow, title, body, links = [] } = Astro.props;
+---
+
+<section class="hero shell">
+  <div class="hero-copy">
+    <p class="eyebrow">{eyebrow}</p>
+    <h1>{title}</h1>
+    <p class="hero-body">{body}</p>
+  </div>
+
+  {links.length > 0 && (
+    <div class="hero-actions">
+      {links.map((link) => (
+        <a
+          class="button-link"
+          href={withBase(link.href)}
+          target={link.external ? "_blank" : undefined}
+          rel={link.external ? "noreferrer" : undefined}
+        >
+          {link.label}
+        </a>
+      ))}
+    </div>
+  )}
+</section>

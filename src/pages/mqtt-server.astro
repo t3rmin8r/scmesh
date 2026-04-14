@@ -1,0 +1,18 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+import PageContent from "../components/PageContent.astro";
+import PageIntro from "../components/PageIntro.astro";
+import mqttServerPage from "../data/pages/mqttServer";
+---
+
+<BaseLayout title={mqttServerPage.title} description={mqttServerPage.description}>
+  <Hero
+    eyebrow={mqttServerPage.heroEyebrow}
+    title={mqttServerPage.title}
+    body={mqttServerPage.heroBody}
+    links={mqttServerPage.heroLinks}
+  />
+  <PageIntro intro={mqttServerPage.intro} />
+  <PageContent content={mqttServerPage} />
+</BaseLayout>

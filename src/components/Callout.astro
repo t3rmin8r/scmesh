@@ -1,0 +1,15 @@
+---
+import type { Callout as CalloutType } from "../types/content";
+
+interface Props {
+  callout: CalloutType;
+}
+
+const { callout } = Astro.props;
+const tone = callout.tone ?? "info";
+---
+
+<aside class:list={["callout", `tone-${tone}`]}>
+  <p class="callout-title">{callout.title}</p>
+  <p>{callout.body}</p>
+</aside>
