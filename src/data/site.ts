@@ -1,15 +1,15 @@
 import type { LinkCard, NavItem } from "../types/content";
 
 export const site = {
-  name: "SCMesh",
+  name: "South Carolina Mesh",
   shortName: "SCMesh",
-  title: "SCMesh Community Network",
+  title: "South Carolina Mesh Community Network",
   description:
-    "A maintainable multi-page static site for a local Meshtastic-style community network.",
+    "A community-powered, off-grid communication network for South Carolina.",
   tagline: "Community-driven mesh communications, documented clearly and hosted simply.",
   repoName: "scmesh",
   footerText:
-    "SCMesh is a community-maintained resource site. Replace placeholder values before publishing operational details."
+    ""
 };
 
 export const navItems: NavItem[] = [

@@ -4,15 +4,15 @@ import type { PageContent } from "../../types/content";
 const getInvolvedPage: PageContent = {
   title: "Get Involved",
   description: "Ways to join, contribute, and help maintain local coverage and documentation.",
-  intro: "There are multiple ways to participate, whether you are bringing a handheld, hosting infrastructure, or helping maintain community docs.",
+  intro: "There are multiple ways to participate, whether you are bringing a handheld, hosting discussions, hosting/supplying infrastructure, or helping maintain community docs.",
   heroEyebrow: "Join the community",
   heroBody:
     "New participants usually start by joining the discussion channels, checking local configuration guidance, and deciding whether they want a mobile, home, or high-site node.",
   heroLinks: [
     {
-      label: "Community Invite",
+      label: "Join the Discord",
       href: placeholderLinks.communityInvite,
-      description: "Replace with your shared chat or forum link.",
+      description: "https://discord.gg/ZVtQeThnPU",
       external: true
     },
     {
