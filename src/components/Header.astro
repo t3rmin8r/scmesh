@@ -10,7 +10,7 @@ const normalize = (value: string) => (value.endsWith("/") ? value : `${value}/`)
 <header class="site-header">
   <div class="shell header-shell">
     <a class="brand" href={withBase("/")}>
-      <span class="brand-mark">SC</span>
+      <img class="brand-mark" src={withBase("/favicon.webp")} alt={`${site.shortName} logo`} />
       <span>
         <strong>{site.shortName}</strong>
         <small>Community network docs</small>

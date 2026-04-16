@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#e5d3ad"/>
+      <stop offset="38%" stop-color="#111111"/>
+      <stop offset="100%" stop-color="#3f8f46"/>
+    </linearGradient>
+    <linearGradient id="shadowFade" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#000000" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+
+  <rect width="1024" height="1024" fill="#ececec"/>
+  <g filter="url(#softShadow)">
+    <rect x="190" y="225" width="645" height="575" rx="95" fill="url(#bg)"/>
+    <rect x="190" y="225" width="645" height="575" rx="95" fill="url(#shadowFade)"/>
+  </g>
+
+  <!-- mesh network -->
+  <g fill="#ead8b2" stroke="#ead8b2" stroke-width="14" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="344" y1="355" x2="520" y2="347"/>
+    <line x1="344" y1="355" x2="435" y2="423"/>
+    <line x1="344" y1="355" x2="270" y2="452"/>
+    <line x1="344" y1="355" x2="355" y2="423"/>
+    <line x1="355" y1="423" x2="270" y2="452"/>
+    <line x1="355" y1="423" x2="435" y2="381"/>
+    <line x1="435" y1="381" x2="520" y2="347"/>
+    <circle cx="344" cy="355" r="23"/>
+    <circle cx="520" cy="347" r="23"/>
+    <circle cx="435" cy="381" r="21"/>
+    <circle cx="355" cy="423" r="23"/>
+    <circle cx="270" cy="452" r="26"/>
+  </g>
+
+  <!-- wifi -->
+  <g fill="none" stroke="#ead8b2" stroke-width="28" stroke-linecap="round">
+    <path d="M641 312 A210 210 0 0 1 772 447"/>
+    <path d="M621 367 A145 145 0 0 1 735 444"/>
+    <path d="M608 419 A95 95 0 0 1 686 451"/>
+  </g>
+
+  <!-- mountains -->
+  <g>
+    <path d="M235 655 L403 457 L432 488 L526 372 L592 455 L540 516 L519 489 L343 648 Z" fill="#101010"/>
+    <path d="M453 639 L612 442 L760 623 L626 560 L539 628 Z" fill="#101010"/>
+    <path d="M361 582 L430 505 L458 532 L603 442 L513 593 Z" fill="#ead8b2"/>
+  </g>
+
+  <!-- SC -->
+  <g fill="#ead8b2" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="140">
+    <text x="548" y="753">SC</text>
+  </g>
+</svg>

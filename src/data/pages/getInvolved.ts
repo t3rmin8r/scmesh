@@ -12,7 +12,7 @@ const getInvolvedPage: PageContent = {
     {
       label: "Join the Discord",
       href: placeholderLinks.communityInvite,
-      description: "https://discord.gg/ZVtQeThnPU",
+      description: "Discord is were meetings primarily happen due to state wide efforts",
       external: true
     },
     {

@@ -73,4 +73,4 @@ export const homeQuickLinks: LinkCard[] = [
   }
 ];
 
-export const homeIntro = `${site.shortName} provides a maintainable structure for publishing local mesh-network guidance without hardcoding production domain references into the site code.`;
+export const homeIntro = `The ${site.name} community provides a maintainable structure for publishing local mesh-network guidance. Our goal is to create the learning environment for new-comers and share ideas in hardware, deploying infrastructure, and sharing experiences. We are always looking for help or assistance.`;

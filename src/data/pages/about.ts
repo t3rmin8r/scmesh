@@ -16,9 +16,9 @@ const aboutPage: PageContent = {
       ]
     },
     {
-      title: "Why communities use mesh radio",
+      title: "Why communities use meshtastic radios",
       paragraphs: [
-        "Mesh radio can remain useful when cellular connectivity is unreliable, overloaded, or unavailable.",
+        "Meshtastic radios can remain useful when cellular connectivity is unreliable, overloaded, or unavailable.",
         "It also gives local groups a practical way to experiment with coverage, routing, and emergency communication workflows."
       ],
       callout: {

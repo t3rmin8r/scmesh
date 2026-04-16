@@ -2,7 +2,7 @@ import type { LinkCard, NavItem } from "../types/content";
 
 export const site = {
   name: "South Carolina Mesh",
-  shortName: "SCMesh",
+  shortName: "SC Mesh",
   title: "South Carolina Mesh Community Network",
   description:
     "A community-powered, off-grid communication network for South Carolina.",
@@ -36,19 +36,14 @@ export const footerLinks: LinkCard[] = [
     description: "General documentation for setup and troubleshooting.",
     external: true
   },
-  {
-    label: "GitHub Pages Guide",
-    href: "https://docs.github.com/pages",
-    description: "Deployment reference for the static hosting pipeline.",
-    external: true
-  }
 ];
 
 export const placeholderLinks = {
-  communityInvite: "https://example.com/community-invite",
+  communityInvite: "https://discord.gg/ZVtQeThnPU",
   volunteerForm: "https://example.com/volunteer-signup",
-  nodeMap: "https://example.com/mesh-map",
-  statusPage: "https://example.com/network-status",
-  dashboard: "https://example.com/mesh-dashboard",
+  nodeMap: "https://meshview.scmesh.us/map",
+  statusPage: "https://meshview.scmesh.us/stats",
+  dashboard: "https://meshview.scmesh.us/nodelist",
+  NodeList: "https://meshview.scmesh.us/nodelist",
   mqttHost: "mqtt.example.net"
 };

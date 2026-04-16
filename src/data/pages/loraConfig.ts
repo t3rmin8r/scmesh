@@ -6,14 +6,14 @@ const loraConfigPage: PageContent = {
   intro: "Use this page to publish the minimum radio settings required for interoperability on your local mesh.",
   heroEyebrow: "Device setup",
   heroBody:
-    "These values are placeholders that reflect a typical long-range mesh profile. Replace every deployment-specific setting with validated local values before publishing.",
+    "These values are a work in progress as I need to confirm these before deployment.",
   sections: [
     {
       title: "Recommended baseline settings",
       configItems: [
         { label: "Radio Settings", value: "LoRa" },
         { label: "OK to MQTT", value: "ON" },
-        { label: "Radio Settings", value: "0.0" },
+        { label: "CHANNEL", value: "SCMesh" },
         { label: "Region", value: "United States" },
         { label: "Hop Limit", value: "3-7", detail: "Tune to your terrain and relay density." },
         { label: "TX Enabled", value: "True" },
