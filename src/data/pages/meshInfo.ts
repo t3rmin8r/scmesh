@@ -4,10 +4,10 @@ import type { PageContent } from "../../types/content";
 const meshInfoPage: PageContent = {
   title: "Mesh Info",
   description: "Publish maps, dashboards, and status resources that help members understand the current network.",
-  intro: "This page collects optional supporting resources such as node maps, dashboards, and service status views.",
+  intro: "",
   heroEyebrow: "Operational visibility",
   heroBody:
-    "Use external dashboards sparingly and describe what each one is meant to answer so members know where to look first.",
+    "Meshview is an external site that shows maps, node activity, and real-time data from the South Carolina Meshtastic mesh network.",
   heroLinks: [
     {
       label: "Mesh Map",
@@ -30,28 +30,48 @@ const meshInfoPage: PageContent = {
   ],
   sections: [
     {
-      title: "What to publish here",
+      title: "What these links show",
+      bullets: [
+        {
+          title: "Mesh Map",
+          items: [
+            "Use this view to see the general geographic distribution of reporting nodes across the mesh.",
+            "It is useful for understanding relay placement, broad coverage patterns, and where gaps may exist."
+          ]
+        },
+        {
+          title: "Status Page",
+          items: [
+            "Use this view for a quick look at the health and activity of the mesh data service.",
+            "It helps answer whether the supporting services appear to be updating normally."
+          ]
+        },
+        {
+          title: "Dashboard",
+          items: [
+            "Use this view for node-by-node visibility into the mesh.",
+            "It is helpful for checking active devices, recent activity, and other high-level network details."
+          ]
+        }
+      ],
+      callout: {
+        title: "Treat Meshview as advisory",
+        body: "Positions, node details, and activity views may be delayed, incomplete, or intentionally approximate. Use them to understand the network, not as a guarantee of current RF conditions.",
+        tone: "info"
+      }
+    },
+    /*{
+      title: "Here be a template section",
       bullets: [
         {
           items: [
-            "A map or view that helps members understand general coverage or node distribution.",
-            "A lightweight status view if you operate optional services such as MQTT or dashboards.",
-            "A short disclaimer describing how often each resource is updated."
+            "He who works with his hands is a laborer",
+            "He who works with his hands & his head is a Craftsman",
+            "He who works with his hands, his head & his heart is an ARTIST"
           ]
         }
       ]
-    },
-    {
-      title: "Publishing guidance",
-      callout: {
-        title: "Avoid overstating accuracy",
-        body: "Maps and dashboards are often delayed, partial, or filtered. Make it clear when a view is advisory rather than authoritative.",
-        tone: "info"
-      },
-      paragraphs: [
-        "If a dashboard is experimental or incomplete, label it explicitly so members understand it may be unavailable without notice."
-      ]
-    }
+    },*/
   ]
 };
 

@@ -295,6 +295,10 @@ h1 {
   gap: 0.75rem;
 }
 
+.hero-actions-center {
+  justify-content: center;
+}
+
 .button-link {
   display: inline-flex;
   align-items: center;

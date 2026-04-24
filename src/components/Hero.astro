@@ -7,9 +7,10 @@ interface Props {
   title: string;
   body: string;
   links?: LinkCard[];
+  actionsAlign?: "start" | "center";
 }
 
-const { eyebrow, title, body, links = [] } = Astro.props;
+const { eyebrow, title, body, links = [], actionsAlign = "start" } = Astro.props;
 ---
 
 <section class="hero shell">
@@ -20,7 +21,7 @@ const { eyebrow, title, body, links = [] } = Astro.props;
   </div>
 
   {links.length > 0 && (
-    <div class="hero-actions">
+    <div class:list={["hero-actions", actionsAlign === "center" && "hero-actions-center"]}>
       {links.map((link) => (
         <a
           class="button-link"

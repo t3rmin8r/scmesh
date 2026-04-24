@@ -6,7 +6,7 @@ export const site = {
   title: "South Carolina Mesh Community Network",
   description:
     "A community-powered, off-grid communication network for South Carolina.",
-  tagline: "Community-driven mesh communications, documented clearly and hosted simply.",
+  tagline: "Community-driven mesh communications.",
   repoName: "scmesh",
   footerText:
     ""
@@ -33,7 +33,7 @@ export const footerLinks: LinkCard[] = [
   {
     label: "Meshtastic Docs",
     href: "https://meshtastic.org/docs/",
-    description: "General documentation for setup and troubleshooting.",
+    description: "General documentation for setup and troubleshooting from the source.",
     external: true
   },
 ];

@@ -3,7 +3,7 @@ import type { PageContent } from "../../types/content";
 const loraConfigPage: PageContent = {
   title: "LoRa Configuration",
   description: "Baseline radio settings and operating guidance for onboarding compatible devices to the network.",
-  intro: "Use conservative defaults and role-appropriate routing so new nodes help the mesh instead of creating avoidable congestion.",
+  intro: "Use conservative defaults and role-appropriate routing so new nodes help the mesh instead of creating avoidable congestion.Choose the right device role first, then keep hop counts and reporting intervals conservative so the mesh stays stable as it grows.",
   heroEyebrow: "Device setup",
   heroBody:
     "Choose the right device role first, then keep hop counts and reporting intervals conservative so the mesh stays stable as it grows.",
