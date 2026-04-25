@@ -81,7 +81,7 @@ Best practice: one person opens the change, at least one other contributor revie
 5. Request at least one review from another team member before merging.
 6. Merge only after checks pass and the reviewer confirms there are no broken links, placeholder values, or accidental operational details.
 
-### Example pull request and commit naming
+### Example pull request and commit naming convention
 
 If you are new to the project, use clear names that say what changed and where it changed.
 
