@@ -11,11 +11,7 @@
     "check": "ASTRO_TELEMETRY_DISABLED=1 astro check"
   },
   "dependencies": {
-<<<<<<< HEAD
     "astro": "^6.3.3"
-=======
-    "astro": "^6.1.6"
->>>>>>> 8fce437 (fix(deps): resolve dependabot vulnerabilities)
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.2",
