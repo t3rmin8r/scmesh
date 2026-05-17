@@ -1,4 +1,5 @@
 ---
+import InlineRichText from "./InlineRichText.astro";
 import type { ConfigItem } from "../types/content";
 
 interface Props {
@@ -13,8 +14,8 @@ const { items } = Astro.props;
     <div class="config-row">
       <dt>{item.label}</dt>
       <dd>
-        <strong>{item.value}</strong>
-        {item.detail && <span>{item.detail}</span>}
+        <strong><InlineRichText content={item.value} /></strong>
+        {item.detail && <span><InlineRichText content={item.detail} /></span>}
       </dd>
     </div>
   ))}

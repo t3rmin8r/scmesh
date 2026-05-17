@@ -20,7 +20,24 @@ const loraConfigPage: PageContent = {
         title: "Start here, then apply the best practices below",
         body: "Use these baseline radio values together with the role, hop, and reporting recommendations below so new nodes join the mesh cleanly.",
         tone: "info"
-      }
+      },
+      subsections: [
+        {
+          title: "Primary channel reminders",
+          paragraphs: [
+            "Keep the primary channel focused on the approved SCMesh baseline so new devices behave predictably when they join the network.",
+            "If a device needs something outside these defaults, check with the mesh operators before saving the changes."
+          ],
+          configItems: [
+        { label: "Radio Settings", value: "TEST DATA For split" },
+          ],
+          callout: {
+            title: "Avoid custom primary-channel changes",
+            body: "Changing the region, channel name, or other core radio settings without coordination can isolate a node or create avoidable troubleshooting work.",
+            tone: "warning"
+          }
+        }
+      ]
     },
     {
       title: "Best practices",
@@ -52,25 +69,6 @@ const loraConfigPage: PageContent = {
       callout: {
         title: "Ask before choosing other roles",
         body: "If you think a node needs a role other than Client_Mute, Client, or Client_Base, check with the mesh operators first. Improperly configured routes can break the mesh.",
-        tone: "warning"
-      }
-    },
-    {
-      title: "MQTT bridge channel settings",
-      configItems: [
-        { label: "Radio / LoRa / OK to MQTT", value: "ON" },
-        { label: "Radio / Channels", value: "Click Add Channel" },
-        { label: "Name", value: "SCMesh" },
-        { label: "Key Size", value: "Default" },
-        { label: "Key", value: "AQ==" },
-        { label: "Channel Role", value: "Secondary" },
-        { label: "Position", value: "ON", detail: "Approximate location: 1.8 miles." },
-        { label: "MQTT Uplink", value: "ON" },
-        { label: "MQTT Downlink", value: "ON" }
-      ],
-      callout: {
-        title: "Use downlink on the secondary channel only",
-        body: "This secondary channel is where downlink belongs. Avoid treating that as guidance for the primary channel, where downlink is still discouraged.",
         tone: "warning"
       }
     },

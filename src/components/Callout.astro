@@ -1,4 +1,5 @@
 ---
+import InlineRichText from "./InlineRichText.astro";
 import type { Callout as CalloutType } from "../types/content";
 
 interface Props {
@@ -11,5 +12,5 @@ const tone = callout.tone ?? "info";
 
 <aside class:list={["callout", `tone-${tone}`]}>
   <p class="callout-title">{callout.title}</p>
-  <p>{callout.body}</p>
+  <p><InlineRichText content={callout.body} /></p>
 </aside>

@@ -1,11 +1,14 @@
 ---
+import InlineRichText from "./InlineRichText.astro";
+import type { InlineContent } from "../types/content";
+
 interface Props {
-  intro: string;
+  intro: InlineContent;
 }
 
 const { intro } = Astro.props;
 ---
 
 <section class="shell page-intro">
-  <p>{intro}</p>
+  <p><InlineRichText content={intro} /></p>
 </section>

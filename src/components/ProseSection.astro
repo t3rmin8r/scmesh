@@ -1,7 +1,10 @@
 ---
+import InlineRichText from "./InlineRichText.astro";
+import type { InlineContent } from "../types/content";
+
 interface Props {
   title: string;
-  paragraphs?: string[];
+  paragraphs?: InlineContent[];
 }
 
 const { title, paragraphs = [] } = Astro.props;
@@ -13,7 +16,7 @@ const { title, paragraphs = [] } = Astro.props;
   </div>
   <div class="prose">
     {paragraphs.map((paragraph) => (
-      <p>{paragraph}</p>
+      <p><InlineRichText content={paragraph} /></p>
     ))}
     <slot />
   </div>

@@ -1,20 +1,31 @@
 ---
+import InlineRichText from "./InlineRichText.astro";
 import { footerLinks, site } from "../data/site";
+import { getSafeHref, isExternalUrl } from "../utils/paths";
 ---
 
 <footer class="site-footer">
   <div class="shell footer-shell">
     <div>
       <p class="footer-title">{site.name}</p>
-      <p class="footer-copy">{site.footerText}</p>
+      <p class="footer-copy"><InlineRichText content={site.footerText} /></p>
     </div>
 
     <div class="footer-links">
-      {footerLinks.map((link) => (
-        <a href={link.href} target={link.external ? "_blank" : undefined} rel={link.external ? "noreferrer" : undefined}>
-          {link.label}
-        </a>
-      ))}
+      {footerLinks.map((link) => {
+        const href = getSafeHref(link.href);
+        const external = href ? isExternalUrl(href) : false;
+
+        if (!href) {
+          return null;
+        }
+
+        return (
+          <a href={href} target={external ? "_blank" : undefined} rel={external ? "noreferrer noopener" : undefined}>
+            {link.label}
+          </a>
+        );
+      })}
     </div>
   </div>
 </footer>

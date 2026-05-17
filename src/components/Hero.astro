@@ -1,11 +1,13 @@
 ---
+import InlineRichText from "./InlineRichText.astro";
 import type { LinkCard } from "../types/content";
-import { withBase } from "../utils/paths";
+import type { InlineContent } from "../types/content";
+import { getSafeHref, isExternalUrl } from "../utils/paths";
 
 interface Props {
   eyebrow: string;
   title: string;
-  body: string;
+  body: InlineContent;
   links?: LinkCard[];
   actionsAlign?: "start" | "center";
 }
@@ -17,21 +19,30 @@ const { eyebrow, title, body, links = [], actionsAlign = "start" } = Astro.props
   <div class="hero-copy">
     <p class="eyebrow">{eyebrow}</p>
     <h1>{title}</h1>
-    <p class="hero-body">{body}</p>
+    <p class="hero-body"><InlineRichText content={body} /></p>
   </div>
 
   {links.length > 0 && (
     <div class:list={["hero-actions", actionsAlign === "center" && "hero-actions-center"]}>
-      {links.map((link) => (
-        <a
-          class="button-link"
-          href={withBase(link.href)}
-          target={link.external ? "_blank" : undefined}
-          rel={link.external ? "noreferrer" : undefined}
-        >
-          {link.label}
-        </a>
-      ))}
+      {links.map((link) => {
+        const href = getSafeHref(link.href);
+        const external = href ? isExternalUrl(href) : false;
+
+        if (!href) {
+          return null;
+        }
+
+        return (
+          <a
+            class="button-link"
+            href={href}
+            target={external ? "_blank" : undefined}
+            rel={external ? "noreferrer noopener" : undefined}
+          >
+            {link.label}
+          </a>
+        );
+      })}
     </div>
   )}
 </section>

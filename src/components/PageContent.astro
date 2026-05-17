@@ -2,6 +2,7 @@
 import BulletGroups from "./BulletGroups.astro";
 import Callout from "./Callout.astro";
 import ConfigList from "./ConfigList.astro";
+import InlineRichText from "./InlineRichText.astro";
 import LinkCards from "./LinkCards.astro";
 import MediaBlock from "./MediaBlock.astro";
 import ProseSection from "./ProseSection.astro";
@@ -21,5 +22,18 @@ const { content } = Astro.props;
     {section.bullets && <BulletGroups groups={section.bullets} />}
     {section.links && <LinkCards cards={section.links} />}
     {section.media && <MediaBlock media={section.media} />}
+    {section.subsections?.map((subsection) => (
+      <section class="subsection">
+        <div class="subsection-heading">
+          <h3>{subsection.title}</h3>
+        </div>
+        {subsection.paragraphs?.map((paragraph) => (
+          <p><InlineRichText content={paragraph} /></p>
+        ))}
+        {subsection.callout && <Callout callout={subsection.callout} />}
+        {subsection.configItems && <ConfigList items={subsection.configItems} />}
+        {subsection.bullets && <BulletGroups groups={subsection.bullets} />}
+      </section>
+    ))}
   </ProseSection>
 ))}

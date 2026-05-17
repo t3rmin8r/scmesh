@@ -1,29 +1,43 @@
 import type { PageContent } from "../../types/content";
+import { placeholderLinks } from "../site";
 
 const mqttServerPage: PageContent = {
   title: "MQTT Server",
   description: "Guidance for using MQTT as an optional bridge without creating unnecessary downlink traffic.",
-  intro: "MQTT is optional. Keep the bridge settings conservative so connected transport helps coverage without flooding the RF side of the mesh.",
+  intro: [
+    { type: "text", value: "Use these settings to connect to our MQTT Server and review the " },
+    { type: "link", label: "node dashboard", href: placeholderLinks.dashboard },
+    { type: "text", value: " before enabling additional transport features." }
+  ],
   heroEyebrow: "Connected transport",
   heroBody:
     "Treat MQTT as a supplement to RF, not a replacement for it. Channel direction settings matter, especially on the primary channel.",
   sections: [
     {
-      title: "Server settings",
-      configItems: [
-        { label: "Enabled", value: "ON" },
+      title: "Radio: SETTINGS",
+      configItems: [{ label: "OK to MQTT", value: "ON" }],
+      callout: {
+        title: "MQTT is Optional",
+        body: "Use these settings to connect to our MQTT Server:",
+        tone: "info"
+      },
+      subsections: [
         {
-          label: "MQTT Client Proxy",
-          value: "ON if using cellphone",
-          detail: "If the node is connected to Wi-Fi, leave this off."
-        },
-        { label: "Encryption Enabled", value: "ON" },
-        { label: "JSON Enabled", value: "OFF" },
-        { label: "Root Topic", value: "msh/US/SC" },
-        { label: "Server Address", value: "mqtt.scmesh.us" },
-        { label: "Username", value: "scmesh" },
-        { label: "Password", value: "Meshtastical" },
-        { label: "TLS Enabled", value: "OFF" }
+          title: "Radio: CHANNELS",
+          paragraphs: [
+            "If a device needs something outside these defaults, check with the mesh operators before saving the changes. \n",
+            "Click (+) Add Channel"
+          ],
+          configItems: [
+            { label: "Name:", value: "SCMesh" },
+            { label: "Key Size:", value: "Default" },
+            { label: "Key:", value: "AQ==" },
+            { label: "Channel Role:", value: "Seconday"},
+            { label: "Position", value: "ON", detail: "Approximate location: 1.8 miles." },
+            { label: "MQTT Uplink", value: "ON" },
+            { label: "MQTT Downlink", value: "ON" }
+          ],
+        }
       ]
     },
     {

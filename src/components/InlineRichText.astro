@@ -1,0 +1,36 @@
+---
+import type { InlineContent, InlineLinkNode, InlineTextNode } from "../types/content";
+import { getSafeHref, isExternalUrl } from "../utils/paths";
+
+interface Props {
+  content: InlineContent;
+}
+
+const { content } = Astro.props;
+const nodes: Array<InlineTextNode | InlineLinkNode> =
+  typeof content === "string" ? [{ type: "text", value: content }] : content;
+---
+
+{nodes.map((node) => {
+  if (node.type === "text") {
+    return node.value;
+  }
+
+  const href = getSafeHref(node.href);
+  const external = href ? isExternalUrl(href) : false;
+
+  if (!href) {
+    return node.label;
+  }
+
+  return (
+    <a
+      class="inline-link"
+      href={href}
+      target={external ? "_blank" : undefined}
+      rel={external ? "noreferrer noopener" : undefined}
+    >
+      {node.label}
+    </a>
+  );
+})}

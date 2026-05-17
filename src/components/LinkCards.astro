@@ -1,6 +1,6 @@
 ---
 import type { LinkCard } from "../types/content";
-import { withBase } from "../utils/paths";
+import { getSafeHref, isExternalUrl } from "../utils/paths";
 
 interface Props {
   cards: LinkCard[];
@@ -10,15 +10,24 @@ const { cards } = Astro.props;
 ---
 
 <div class="link-grid">
-  {cards.map((card) => (
-    <a
-      class="link-card"
-      href={withBase(card.href)}
-      target={card.external ? "_blank" : undefined}
-      rel={card.external ? "noreferrer" : undefined}
-    >
-      <strong>{card.label}</strong>
-      <p>{card.description}</p>
-    </a>
-  ))}
+  {cards.map((card) => {
+    const href = getSafeHref(card.href);
+    const external = href ? isExternalUrl(href) : false;
+
+    if (!href) {
+      return null;
+    }
+
+    return (
+      <a
+        class="link-card"
+        href={href}
+        target={external ? "_blank" : undefined}
+        rel={external ? "noreferrer noopener" : undefined}
+      >
+        <strong>{card.label}</strong>
+        <p>{card.description}</p>
+      </a>
+    );
+  })}
 </div>
