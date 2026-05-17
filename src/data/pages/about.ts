@@ -34,7 +34,7 @@ const aboutPage: PageContent = {
           items: [
             "Use device names and contact details that help local operators identify who owns critical infrastructure.",
             "Place fixed nodes where they can contribute meaningful coverage without unsafe power or mounting practices.",
-            "Document local conventions clearly so new participants can join without guessing."
+            "Document local conventions clearly so new participants can join without a guess."
           ]
         }
       ]
