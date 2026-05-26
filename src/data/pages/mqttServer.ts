@@ -30,13 +30,34 @@ const mqttServerPage: PageContent = {
           ],
           configItems: [
             { label: "Name:", value: "SCMesh" },
-            { label: "Key Size:", value: "Default" },
+            { label: "Key Size:", value: "Default (8 bit)" },
             { label: "Key:", value: "AQ==" },
-            { label: "Channel Role:", value: "Seconday"},
-            { label: "Position", value: "ON", detail: "Approximate location: 1.8 miles." },
+            { label: "Channel Role:", value: "Secondary"},
+            { label: "Position", value: "ON", detail: "Approximate location: 1.8 miles" },
             { label: "MQTT Uplink", value: "ON" },
-            { label: "MQTT Downlink", value: "ON" }
+            { label: "MQTT Downlink", value: "ON" },
           ],
+        },
+        {
+          title: "MQTT Connection Settings",
+          paragraphs: [
+            "Use these setting for the MQTT module options settings",
+          ],
+          configItems: [
+            {label: "Enabled", value: "ON"},
+            { label: "MQTT Client Proxy", value: "ON if using cellphone. (if node connected to wifi, leave this off)"},
+            {label: "Connect to MQTT via Proxy", value: "ON", detail: "(Test with it on/off to see best results. If you experience issue check the community on discord for troubleshooting)"},
+            {label: "Encryption Enabled", value: "ON"},
+            {label: "Map Report", value: "ON"},
+            {label: "Consent", value: "ON", detail: "select I have read and understand the above....."},
+            {label: "Map Publish Interval", value: "1 - 3 Hours"},
+            {label: "Approximate Location", value: 'Move Slider to show "Within 1.8 miles"'},
+            {label: "Root Topic", value: "msh/US/SC"},
+            {label: "Address", value: "mqtt.scmesh.us"},
+            {label: "Username", value: "scmesh"},
+            {label: "Password", value: "Meshtastical", detail: "(M is capitalized)"},
+            {label: "TLS Enabled", value: "OFF"},
+          ]
         }
       ]
     },
