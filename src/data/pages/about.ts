@@ -3,10 +3,10 @@ import type { PageContent } from "../../types/content";
 const aboutPage: PageContent = {
   title: "About the Network",
   description: "Overview of the community network mission, operating model, and expected node behavior.",
-  intro: "Learn what the network is for, how it operates, and what participants should expect when joining.",
+  intro: "",
   heroEyebrow: "Mission",
   heroBody:
-    "SCMesh is a community-run radio mesh intended to make local communication more resilient, approachable, and well-documented. Nodes relay messages cooperatively, extending coverage without depending on centralized infrastructure.",
+    "South Carolina Mesh is a group of enthusiasts, hobbyists, and prepared individuals building and maintaining a Meshtastic network. While centered in the Upstate, our network is for all of South Carolina. We welcome anyone to join our community, regardless of location, to collaborate on expanding coverage, share knowledge, and support each other.",
   sections: [
     {
       title: "What this network does",
